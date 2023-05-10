@@ -3,24 +3,26 @@ import { APIObjectType, sendAllProps } from "../../types/api/index";
 import axios, { AxiosResponse } from "axios";
 import { FlowType } from "../../types/flow";
 
+const endpoint = "https://api.hatcher.network/builder"
+
 export async function getAll(): Promise<AxiosResponse<APIObjectType>> {
-  return await axios.get(`/all`);
+  return await axios.get(endpoint + `/all`);
 }
 
 export async function sendAll(data: sendAllProps) {
-  return await axios.post(`/predict`, data);
+  return await axios.post(endpoint + `/predict`, data);
 }
 
 export async function checkCode(
   code: string
 ): Promise<AxiosResponse<errorsTypeAPI>> {
-  return await axios.post("/validate/code", { code });
+  return await axios.post(endpoint + "/validate/code", { code });
 }
 
 export async function checkPrompt(
   template: string
 ): Promise<AxiosResponse<PromptTypeAPI>> {
-  return await axios.post("/validate/prompt", { template });
+  return await axios.post(endpoint + "/validate/prompt", { template });
 }
 
 export async function getExamples(): Promise<FlowType[]> {
