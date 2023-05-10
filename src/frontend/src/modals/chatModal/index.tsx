@@ -58,10 +58,8 @@ export default function ChatModal({
     try {
       const urlWs =
         process.env.NODE_ENV === "development"
-          ? `ws://localhost:7860/chat/${flow.id}`
-          : `${window.location.protocol === "https:" ? "wss" : "ws"}://${
-              window.location.host
-            }/chat/${flow.id}`;
+          ? `wss://api.hatcher.network/builder/chat/${flow.id}`
+          : `wss://api.hatcher.network/builder/chat/${flow.id}`;
 
       const newWs = new WebSocket(urlWs);
       newWs.onopen = () => {
