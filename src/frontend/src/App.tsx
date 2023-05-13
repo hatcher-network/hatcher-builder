@@ -155,13 +155,6 @@ export default function App() {
 					</div>
 				))}
 			</div>
-			<a
-				target={"_blank"}
-				href="https://logspace.ai/"
-				className="absolute bottom-2 left-6 text-gray-300 px-2 rounded-lg text-xs cursor-pointer font-sans tracking-wide bg-gray-800 dark:bg-gray-300 dark:text-gray-800	"
-			>
-				Created by Logspace
-			</a>
 		</div>
 	);
 }
